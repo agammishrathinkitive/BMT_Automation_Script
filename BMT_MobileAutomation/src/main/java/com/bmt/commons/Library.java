@@ -279,9 +279,9 @@ public class Library extends TestBase {
 		}
 	}
 
-	public void verifyMobileElementAbsent(String locator) {
+	public void verifyMobileElementAbsent(String locator, long timeOutInSeconds) {
 		try {
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(timeOutInSeconds, TimeUnit.SECONDS);
 			MobileElement byVal = findMobileElement(locator);
 
 			Assert.assertTrue(false, "Expected element to be absent, but it was found on the page.=" + byVal);
